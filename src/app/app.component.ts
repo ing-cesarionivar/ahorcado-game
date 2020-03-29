@@ -47,15 +47,19 @@ export class AppComponent {
     const palabraArr = this.palabraOculta.split(' ');
     const palabraEvaluar = palabraArr.join('');
 
-    console.log(palabraEvaluar);
-    
-    
-    
+    if (palabraEvaluar === this.palabra) {
+      this.gano = true;      
+    }
+
+    if (this.intentos >= 9 ) {
+      this.perdio = true;      
+    }
 
   }
 
   existeLetra( letra ) {
 
+    // Verificar si la letra existe o no
     if (this.palabra.indexOf(letra) >= 0 ){
       // console.log('Letra existe: ' + letra);
       
